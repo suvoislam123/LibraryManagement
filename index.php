@@ -1,5 +1,5 @@
 <?php
-// session_start(); 
+// session_start();
 // session_destroy();
 // if (!(isset($_SESSION['auth']) && $_SESSION['auth'] === true)) {
 // 	header("Location: admin.php?access=false");
@@ -21,7 +21,7 @@ require 'includes/db-inc.php';
 
     $news = sanitize(trim($_POST['news']));
 
-    $sql = "INSERT into news (announcement) values ('$news')"; 
+    $sql = "INSERT into news (announcement) values ('$news')";
 
     $query = mysqli_query($conn,$sql);
     $error = false;
@@ -31,7 +31,7 @@ require 'includes/db-inc.php';
       }
       else{
         echo "<script>alert('Not successful!! Try again.');
-                    </script>"; 
+                    </script>";
       }
  }
 
@@ -45,8 +45,8 @@ require 'includes/db-inc.php';
                 if ($result)
                 {
                     echo "<script>
-            
-           
+
+
                    alert('Update successful');
 
          </script>";
@@ -59,24 +59,24 @@ require 'includes/db-inc.php';
 
         $id = sanitize(trim($_POST['id']));
 
-        $sql_del = "DELETE from news where newsId = $id"; 
+        $sql_del = "DELETE from news where newsId = $id";
 
         $result = mysqli_query($conn,$sql_del);
                 if ($result)
                 {
          //            echo "<script>
-            
+
          //    var response = confirm('Would you like to delete the user');
          //    if (response == true) {
          //        alert('User was successfully deleted from the database');
          //            location.href ='admin.php';
-         //    }   
+         //    }
 
          //    else
          //        {
          //            alert('Could not delete user');
          //        }
-            
+
 
          // </script>";
                 }
@@ -119,7 +119,7 @@ require 'includes/db-inc.php';
 			<div class="collapse navbar-collapse" id="bs-example">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
-										
+
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="login.php">Login</a></li>
@@ -131,7 +131,7 @@ require 'includes/db-inc.php';
 </div>
 
 		<div class="container-fluid slide">
-			
+
 	  		<div class="slider">
 	  			<!-- <h1>Flickity - wrapAround</h1> -->
 
@@ -148,7 +148,7 @@ require 'includes/db-inc.php';
 						  <div class="carousel-cell" auto-play>
 						  	 <img src="ify/3.jpeg">
 						  </div>
-						  
+
 						  <div class="carousel-cell" auto-play >
 						  	<img src="ify/4.jpeg">
 						  </div>
@@ -158,38 +158,38 @@ require 'includes/db-inc.php';
 
 					</div>
 
-					
+
 
 	  		</div>
 		</div>
 
 			  <!-- Default panel contents -->
-	
+
 
 
 
 
 
 		<div class="container slide2">
-			
+
 			  <div class="panel-heading">
 		  	<div class="row">
 		  		<h3 class="center-block" style="font-size: 30px;">Published Announcements</h3>
 			</div>
 		  </div>
 		  <table class="table table-bordered" style="font-size: 18px;">
-         
+
 
       		<thead>
                 <tr>
                     <th>NewsId</th>
                          <th>Announcement</th>
-                          
-                        
+
+
                 </tr>
           </thead>
 
-           <?php 
+           <?php
 
           $sql2 = "SELECT * from news";
 
@@ -201,18 +201,18 @@ require 'includes/db-inc.php';
         <tbody >
           <td><?php echo $counter++; ?></td>
           <td><?php echo $row['announcement']; ?></td>
-        
+
         </tbody>
 
      <?php }
            ?>
-		        
-		         </tbody> 
+
+		         </tbody>
 		   </table>
-		 
+
 	  </div>
 
-			
+
 			</div>
 	</div>
 
@@ -282,9 +282,11 @@ require 'includes/db-inc.php';
 				</div>
 			</div>
 			</div>
-			
+
 		</div>
-		
+    <footer>
+      <p>Hi ,welcomw to our library </p>
+    </footer>
 
 
 <script type="text/javascript" src="js/jquery.js"></script>
