@@ -86,9 +86,104 @@ $student_name = $_SESSION['student-username'];
                  </tbody> 
                  <?php } ?>
            </table>
-         
+           <div class="change_password">
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Change Password 
+</button>
 
-            </div> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="jumbotron">
+               <table class="table table-bordered">
+                    <?php 
+                    $sql = "SELECT * from students where username = '$student_name'";
+                    $query = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($query)) { ?>
+                                 
+                  <tbody> 
+                                      <tr> 
+                                      
+                                       <td>Name : </td>
+                                       <td><?php echo $row['name']; ?></td>
+                                       
+                                      </tr> 
+                                      <tr> 
+                                       
+                                       <td>Matric No : </td>
+                                       <td><?php echo $row['matric_no']; ?></td>
+                                      </tr> 
+                                      <tr> 
+                                       
+                                       <td>Email : </td>
+                                       <td><?php echo $row['email']; ?></td>
+                                      </tr>
+                                      <tr>
+                                       <tr> 
+                                      
+                                       <td>Department : </td>
+                                       <td><?php echo $row['dept']; ?></td>
+                                      </tr>
+                                      
+                                      
+                                      <tr>
+                                       
+                                       <td>Phone Number : </td>
+                                       <td><?php echo $row['phoneNumber']; ?></td>
+                                      </tr> 
+                                      <tr>
+                                      
+                                       <td>Username : </td>
+                                       <td><?php echo $row['username']; ?></td>
+                                      </tr> 
+                                      <form action="update_password.php" method="post">
+                                         <tr>
+                                       
+                                       <td>Old Password : </td>
+                                       <td>
+                                          <input type="password" name="password">
+                                          
+                                       </td>
+                                      </tr>  
+                                      <tr>
+                                       
+                                       <td>New Password : </td>
+                                       <td>
+                                          <input type="password" name="cpassword">
+                                          
+                                       </td>
+                                      </tr>  
+                                      <tr>
+                                       <td colspan ="2">
+                                          <input class="btn-primary" type="submit" name="submit" value="Save Changes">
+                                       </td>
+                                      </tr>
+                                      </form>
+                                     
+                                   </tbody> 
+                                   <?php } ?>
+                             </table>
+                           </tr>
+                        </tbody>
+                        </table>
+                     </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+           </div>
+
       </div>
 
 	<!-- Confirm delete modal begins here -->
