@@ -122,7 +122,10 @@ require 'includes/db-inc.php';
 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.php">Login</a></li>
+					<li><a href="slogin.php">Login As Shudent</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.php">Login As Admin</a></li>
 				</ul>
 			</div>
 		</div>
