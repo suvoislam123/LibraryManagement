@@ -106,7 +106,7 @@ if(isset($_POST['submit'])){
 				<div>
 					<div class="col-sm-offset-2 col-sm-10">
 							
-							<button class="btn btn-primary btn-lg">Sign Up</button>
+							<button class="btn btn-primary btn-lg"><a href="addstudent.php">Sign Up</a></button>
 								
 							
 					</div>
